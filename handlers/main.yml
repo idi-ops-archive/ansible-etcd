@@ -1,6 +1,4 @@
 ---
-- name: reload systemd
-  command: systemctl --system daemon-reload
 
 - name: restart etcd
   service:
