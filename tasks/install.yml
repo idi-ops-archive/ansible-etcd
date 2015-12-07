@@ -1,0 +1,6 @@
+---
+
+- name: Install package
+  yum:
+    name: etcd
+    state: latest

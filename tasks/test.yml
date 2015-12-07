@@ -1,0 +1,12 @@
+---
+
+- name: Wait for client port
+  wait_for:
+    host: 127.0.0.1
+    port: "{{ etcd_client_port }}"
+    delay: 5
+    timeout: 30
+
+- name: Check cluster health
+  command: /usr/bin/etcdctl cluster-health
+  changed_when: false
