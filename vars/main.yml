@@ -1,0 +1,4 @@
+---
+
+etcd_packages:
+  - etcd
