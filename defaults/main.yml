@@ -1,0 +1,31 @@
+---
+
+etcd_client_port: 2379
+etcd_peer_port: 2380
+etcd_peers_group: etcd
+etcd_url_scheme: http
+etcd_peer_url_scheme: http
+
+etcd_conf_dir: /etc/etcd
+etcd_data_dir: /var/lib/etcd
+
+etcd_ca_file: "{{ etcd_conf_dir }}/tls/ca.crt"
+etcd_cert_file: "{{ etcd_conf_dir }}/tls/server.crt"
+etcd_key_file: "{{ etcd_conf_dir }}/tls/server.key"
+etcd_peer_ca_file: "{{ etcd_conf_dir }}/tls/ca.crt"
+etcd_peer_cert_file: "{{ etcd_conf_dir }}/tls/peer.crt"
+etcd_peer_key_file: "{{ etcd_conf_dir }}/tls/peer.key"
+
+etcd_initial_cluster_state: new
+etcd_initial_cluster_token: etcd-k8-cluster
+
+etcd_snapshot_counter: 10000
+etcd_heartbeat_interval: 100
+etcd_election_timeout: 1000
+etcd_max_snapshots: 5
+etcd_max_wals: 5
+etcd_cors: ''
+
+etcd_listen_peer_urls: "{{ etcd_peer_url_scheme }}://0.0.0.0:{{ etcd_peer_port }}"
+etcd_advertise_client_urls: "{{ etcd_url_scheme }}://{{ ansible_fqdn }}:{{ etcd_client_port }}"
+etcd_listen_client_urls: "{{ etcd_url_scheme }}://0.0.0.0:{{ etcd_client_port }}"

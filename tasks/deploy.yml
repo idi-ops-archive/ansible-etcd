@@ -1,0 +1,7 @@
+---
+
+- name: Enable and start service
+  service:
+    name: etcd
+    enabled: yes
+    state: started

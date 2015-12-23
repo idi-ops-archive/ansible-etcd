@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Giovanni Tirloni
+  description: Ansible role for etcd key-value store
+  company: Inclusive Design Research Centre, OCAD University
+  license: MIT
+  min_ansible_version: 1.9.4
+  platforms:
+  - name: EL
+    versions:
+    - 7
+dependencies: []

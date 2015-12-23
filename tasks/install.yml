@@ -1,0 +1,7 @@
+---
+
+- name: Install package
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items: etcd_packages
